@@ -25,6 +25,7 @@ import adminTaskRoutes from './routes/admin/task.admin.routes';
 
 import { errorHandler } from './middleware/error.middleware';
 import { setupSwagger } from './config/swagger';
+import { startKeepAlive } from './utils/keepAlive';
 
 // Load environment variables (.env)
 dotenv.config();
@@ -80,6 +81,11 @@ const PORT = process.env.PORT || 5001; // Port 5001 avoids conflict with default
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📖 API Documentation available at http://localhost:${PORT}/api-docs`);
+
+  /**
+   * Keep-alive service: Prints a message every 13s to stay active.
+   */
+  startKeepAlive();
 });
 
 export default app;
