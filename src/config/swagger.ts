@@ -15,6 +15,10 @@ const options: swaggerJsdoc.Options = {
         url: 'http://localhost:5001',
         description: 'Development server',
       },
+      {
+        url: 'https://quiz-mern-backend-s3zf.onrender.com',
+        description: 'Production server (Render)',
+      },
     ],
     components: {
       securitySchemes: {

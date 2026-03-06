@@ -85,7 +85,7 @@ app.listen(PORT, () => {
   /**
    * Keep-alive service: Prints a message every 13s to stay active.
    */
-  startKeepAlive();
+  startKeepAlive(process.env.BASE_URL);
 });
 
 export default app;
